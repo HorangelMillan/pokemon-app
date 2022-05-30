@@ -1,0 +1,130 @@
+.pokedex {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* header */
+
+.pokedex>header {
+    height: 7rem;
+    width: 100%;
+    background-color: #DD1A1A;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.pokedex>header>div:nth-child(1) {
+    margin-left: 3rem;
+    position: relative;
+    display: flex;
+    height: 5rem;
+    top: 1rem;
+}
+
+.pokedex>header>div:nth-child(1)>img {
+    align-self: flex-end;
+    height: 4rem;
+
+}
+
+.pokedex>header>div:nth-child(2) {
+    height: 2.5rem;
+    width: 100%;
+    background-color: #000000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.pokedex>header>div:nth-child(2)>div {
+    height: 4rem;
+    width: 4rem;
+    background-color: #FFFFFF;
+    border: 6px solid #000000;
+    border-radius: 50%;
+    margin-right: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokedex>header>div:nth-child(2)>div>div {
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    background-color: #000000;
+}
+
+/* welcome mesagge */
+
+.pokedex>p {
+    font-family: 'Inter';
+    font-weight: 500;
+    width: 100%;
+    padding-left: 2rem;
+}
+
+.pokedex>p>span>b {
+    color: #FE1936;
+}
+
+/* input and select */
+
+.pokedex>div:nth-child(3) {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.pokedex>div {
+    width: 100%;
+}
+
+.pokedex>div>div>input,
+button {
+    font-family: 'Roboto';
+    font-weight: 500;
+}
+
+.pokedex>div>div>input {
+    font-size: 25px;
+    border: none;
+    outline: none;
+    box-shadow: -1px 6px 8px rgba(0, 0, 0, 0.267);
+    padding: 1rem;
+    margin: 0 0 0 2rem;
+}
+
+.pokedex>div>div>button {
+    font-size: 24px;
+    height: 100%;
+    width: 5rem;
+    border: none;
+    background-color: #D93F3F;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.pokedex select {
+    margin-left: 2rem;
+    border: none;
+    font-family: 'Inter';
+    outline: none;
+}
+
+option {
+    color: red;
+}
+
+/* pokemon list */
+
+.pokedex > ul {
+    width: 97%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(11.5rem, auto));
+    gap: 1rem;
+}

@@ -1,0 +1,102 @@
+[
+    {
+        "name": "normal",
+        "color": "#000000",
+        "background": "#F6F2FF"
+    },
+    {
+        "name": "fighting",
+        "color": "#EB3333",
+        "background": "#EB3333"
+    },
+    {
+        "name": "flying",
+        "color": "#a2f6e6",
+        "background": "#a2f6e6"
+    },
+    {
+        "name": "poison",
+        "color": "#931065",
+        "background": "#931065"
+    },
+    {
+        "name": "ground",
+        "color": "#974535",
+        "background": "#974535"
+    },
+    {
+        "name": "rock",
+        "color": "#898989",
+        "background": "#898989"
+    },
+    {
+        "name": "bug",
+        "color": "#A9D050",
+        "background": "#A9D050"
+    },
+    {
+        "name": "ghost",
+        "color": "#420039",
+        "background": "linear-gradient(#420039, #9e3375)"
+    },
+    {
+        "name": "steel",
+        "color": "#CDCFC9",
+        "background": "linear-gradient(#CDCFC9, #FFFFFF)"
+    },
+    {
+        "name": "fire",
+        "color": "#E61C1C",
+        "background": "#E61C1C"
+    },
+    {
+        "name": "water",
+        "color": "#0d15ae",
+        "background": "#0d15ae"
+    },
+    {
+        "name": "grass",
+        "color": "#0F9600",
+        "background": "#0F9600"
+    },
+    {
+        "name": "electric",
+        "color": "#F7FF00",
+        "background": "#F7FF00"
+    },
+    {
+        "name": "psychic",
+        "color": "#FF4791",
+        "background": "linear-gradient(#FF4791, #FFADCE)"
+    },
+    {
+        "name": "ice",
+        "color": "#3fb9ff",
+        "background": "linear-gradient(#3fb9ff, #FFFFFF)"
+    },
+    {
+        "name": "dragon",
+        "color": "#7038f8",
+        "background": "#7038f8"
+    },
+    {
+        "name": "dark",
+        "color": "#705848",
+        "background": "#705848"
+    },
+    {
+        "name": "fairy",
+        "color": "#ee99ac",
+        "background": "#ee99ac"
+    },
+    {
+        "name": "unknown",
+        "color": "#ee99ac",
+        "background": "#ee99ac"
+    },
+    {
+        "name": "shadow",
+        "color": "#021520",
+        "background": "linear-gradient(#021520, #5c6083)"
+    }
+]
