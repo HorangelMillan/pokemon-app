@@ -12,7 +12,7 @@
     height: 3rem;
     width: 3rem;
     background-color: rgb(212, 50, 50);
-    border-radius: 50%;
+    border-radius: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;

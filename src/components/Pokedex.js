@@ -15,7 +15,7 @@ const Pokedex = () => {
     /* pagination */
 
     const [currentPage, setCurrentPage] = useState(1);
-    const [pokemonsPerPage, setPokemonsPerPage] = useState(10);
+    const [pokemonsPerPage] = useState(10);
 
     const indexOfLastPokemon = currentPage * pokemonsPerPage;
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
