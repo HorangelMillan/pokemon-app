@@ -14,8 +14,20 @@ const PokemonDetails = () => {
 
     return (
         <div>
-            <h1>{pokemon.name}</h1>
-            <img src={pokemon.sprites?.front_default} alt="" />
+            <div>
+                <p>weigth</p>
+                <p>{pokemon.weight}</p>
+            </div>
+            <div>
+                <img src={pokemon.sprites?.front_default} alt="" />
+                <h1>{pokemon.name}</h1>
+                <h2># {pokemon.id}</h2>
+            </div>
+            <div>
+                <p>heigth</p>
+                <p>{pokemon.heigth}</p>
+            </div>
+
         </div>
     );
 };
