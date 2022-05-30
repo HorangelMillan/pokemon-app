@@ -116,10 +116,6 @@ button {
     outline: none;
 }
 
-option {
-    color: red;
-}
-
 /* pokemon list */
 
 .pokedex > ul {

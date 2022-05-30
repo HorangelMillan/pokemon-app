@@ -4,21 +4,38 @@ import { useSelector } from 'react-redux';
 import PokemonCard from './PokemonCard';
 import imgPokedex from './images/pokedex.png';
 import './styles/pokedex.css';
+import Pagination from './Pagination';
 
 const Pokedex = () => {
 
     const [pokemons, setPokemons] = useState([]);
     const [valueInput, setValueInput] = useState('');
+    const [types, setTypes] = useState([]);
+
+    /* pagination */
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [pokemonsPerPage, setPokemonsPerPage] = useState(10);
+
+    const indexOfLastPokemon = currentPage * pokemonsPerPage;
+    const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
+    const currentPokemon = pokemons.slice(indexOfFirstPokemon, indexOfLastPokemon)
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+    /* pagination */
 
     useEffect(() => {
         axios.get('https://pokeapi.co/api/v2/pokemon?limit=20&offset=20')
-            .then(res => setPokemons(res.data?.results))
+            .then(res => setPokemons(res.data?.results));
+        axios.get('https://pokeapi.co/api/v2/type')
+            .then(res => setTypes(res.data?.results));
     }, []);
 
-    /* const getPokemons = () => {
+    const getPokemons = () => {
         axios.get('https://pokeapi.co/api/v2/pokemon?limit=20&offset=20')
-            .then(res => setPokemons(res.data?.results))
-    } */
+            .then(res => setPokemons(res.data?.results));
+    }
 
     const getPokemon = () => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${valueInput}`)
@@ -28,9 +45,16 @@ const Pokedex = () => {
             });
     };
 
-    const userName = useSelector(state => state.userName);
+    const getPokemonByType = (e) => {
+        if (e.target.value !== 'all') {
+            axios.get(`https://pokeapi.co/api/v2/type/${e.target.value}`)
+                .then(res => setPokemons(res.data?.pokemon));
+        } else {
+            getPokemons();
+        };
+    };
 
-    console.log(pokemons)
+    const userName = useSelector(state => state.userName);
 
     return (
         <div className='pokedex'>
@@ -46,18 +70,25 @@ const Pokedex = () => {
                     <input type="text" placeholder='Search a pokemon...' onChange={e => setValueInput(e.target.value)} />
                     <button onClick={getPokemon}>Search</button>
                 </div>
-                <select name="typePokemon" id="typePokemon">
-                    <option>All pokemons</option>
+                <select onChange={getPokemonByType}>
+                    <option value={'all'}>All pokemons</option>
+                    {
+                        types ? types.map(type => (
+                            <option value={type.name} key={type.name}>{type.name}</option>
+                        )) : null
+                    }
                 </select>
             </div>
 
             <ul>
                 {
-                    pokemons.map(pokemon => (
+                    currentPokemon.map(pokemon => (
                         <PokemonCard key={pokemon.url !== undefined ? pokemon.url : pokemon.pokemon?.url} pokemonUrl={pokemon.url !== undefined ? pokemon.url : pokemon.pokemon?.url} />
                     ))
                 }
             </ul>
+
+            <Pagination pokemonsPerPage={pokemonsPerPage} totalPokemons={pokemons.length} paginate={paginate}/>
         </div>
     );
 };

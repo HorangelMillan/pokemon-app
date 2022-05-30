@@ -39,8 +39,6 @@ const PokemonCard = ({ pokemonUrl }) => {
 
     const navigate = useNavigate();
 
-    console.log('Esta es la url que buscas' + pokemonUrl)
-
     return (
         <li style={{ background: background }} className='pokemon-card' onClick={() => navigate(`/pokedex/${pokemonInfo.id}`)}>
             <div>
