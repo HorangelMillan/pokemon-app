@@ -26,7 +26,7 @@ const Pokedex = () => {
     /* pagination */
 
     useEffect(() => {
-        axios.get('https://pokeapi.co/api/v2/pokemon?limit=20&offset=20')
+        axios.get('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0')
             .then(res => setPokemons(res.data?.results));
         axios.get('https://pokeapi.co/api/v2/type')
             .then(res => setTypes(res.data?.results));
