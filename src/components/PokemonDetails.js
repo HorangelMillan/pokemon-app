@@ -25,11 +25,11 @@ const PokemonDetails = () => {
 
                 <div className='features'>
                     <div>
-                        <p>heigth</p>
-                        <p>{pokemon.heigth}</p>
+                        <p>height</p>
+                        <p>{pokemon.height}</p>
                     </div>
                     <div>
-                        <p>weigth</p>
+                        <p>weight</p>
                         <p>{pokemon.weight}</p>
                     </div>
                 </div>
