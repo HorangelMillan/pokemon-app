@@ -21,7 +21,10 @@ const Pokedex = () => {
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
     const currentPokemon = pokemons.slice(indexOfFirstPokemon, indexOfLastPokemon)
 
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    const paginate = (pageNumber) => {
+        setCurrentPage(pageNumber);
+        console.log(pageNumber);
+    };
 
     /* pagination */
 
@@ -33,7 +36,7 @@ const Pokedex = () => {
     }, []);
 
     const getPokemons = () => {
-        axios.get('https://pokeapi.co/api/v2/pokemon?limit=20&offset=20')
+        axios.get('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0')
             .then(res => setPokemons(res.data?.results));
     }
 
@@ -88,7 +91,7 @@ const Pokedex = () => {
                 }
             </ul>
 
-            <Pagination pokemonsPerPage={pokemonsPerPage} totalPokemons={pokemons.length} paginate={paginate}/>
+            <Pagination currentPage={currentPage} pokemonsPerPage={pokemonsPerPage} totalPokemons={pokemons.length} paginate={paginate}/>
         </div>
     );
 };

@@ -1,11 +1,15 @@
 import React from 'react';
 import './styles/pagination.css';
 
-const Pagination = ({ pokemonsPerPage, totalPokemons, paginate }) => {
+const Pagination = ({ pokemonsPerPage, totalPokemons, paginate, currentPage }) => {
     const pageNumbers = [];
 
-    for (let i = 1; i<= Math.ceil(totalPokemons / pokemonsPerPage); i++) {
-        pageNumbers.push(i);
+    for (let i = 1; i <= Math.ceil(totalPokemons / pokemonsPerPage); i++) {
+        if (i > currentPage && i <= currentPage + 5) {
+            pageNumbers.push(i);
+        } else if (i <= currentPage && i >= currentPage - 5) {
+            pageNumbers.push(i);
+        };
     }
 
     return (

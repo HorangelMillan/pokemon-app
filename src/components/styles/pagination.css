@@ -1,6 +1,8 @@
 .pagination {
     margin: 2rem 0;
+    max-width: 30%;
     display: flex;
+    border: 1px solid black;
 }
 
 .pagination li {
