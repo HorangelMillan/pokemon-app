@@ -52,9 +52,9 @@ const PokemonCard = ({ pokemonUrl }) => {
                     </div>
                     <div>
                         <ul>
-                            <li>{hp.stat?.name}<p>{attack.base_stat}</p></li>
-                            <li>{defense.stat?.name}<p>{attack.base_stat}</p></li>
-                            <li>{speed.stat?.name}<p>{attack.base_stat}</p></li>
+                            <li>{hp.stat?.name}<p>{hp.base_stat}</p></li>
+                            <li>{defense.stat?.name}<p>{defense.base_stat}</p></li>
+                            <li>{speed.stat?.name}<p>{speed.base_stat}</p></li>
                             <li>{attack.stat?.name}<p>{attack.base_stat}</p></li>
                         </ul>
                     </div>
