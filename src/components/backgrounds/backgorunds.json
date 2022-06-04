@@ -2,17 +2,17 @@
     {
         "name": "normal",
         "color": "#000000",
-        "background": "#F6F2FF"
+        "background": "linear-gradient(rgb(187, 187, 187), rgb(230, 230, 230)"
     },
     {
         "name": "fighting",
         "color": "#EB3333",
-        "background": "#EB3333"
+        "background": "linear-gradient(#EB3333, #ff8905)"
     },
     {
         "name": "flying",
         "color": "#a2f6e6",
-        "background": "#a2f6e6"
+        "background": "linear-gradient(#a2f6e6, #dff8f4)"
     },
     {
         "name": "poison",

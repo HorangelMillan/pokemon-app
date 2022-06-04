@@ -51,4 +51,10 @@
     background-color: #FFFFFF;
     border-radius: 0 0 0.5rem 0.5rem;
     z-index: 1;
+
 }
+
+.pepe {
+    background: linear-gradient(#a2f6e6, #dff8f4);
+}
+

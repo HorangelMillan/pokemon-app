@@ -18,22 +18,24 @@ const PokemonCard = ({ pokemonUrl }) => {
     const [color, setColor] = useState('');
 
     useEffect(() => {
-        axios.get(pokemonUrl).then(res => {
-            setName(res.data?.name.charAt(0).toUpperCase() + res.data?.name.slice(1));
+        if (pokemonUrl) {
+            axios.get(pokemonUrl).then(res => {
+                setName(res.data?.name.charAt(0).toUpperCase() + res.data?.name.slice(1));
 
-            setPokemonInfo(res.data);
-            setTypesPokemon(res.data.types[0].type?.name);
-            setAttack(res.data.stats[0]);
-            setDefense(res.data.stats[1]);
-            setSpeed(res.data.stats[2]);
-            setHp(res.data.stats[5]);
-            for (const property in backgrounds) {
-                if (backgrounds[property].name === res.data.types[0].type?.name) {
-                    setBackground(backgrounds[property].background);
-                    setColor(backgrounds[property].color);
-                };
-            }
-        });
+                setPokemonInfo(res.data);
+                setTypesPokemon(res.data.types);
+                setAttack(res.data.stats[0]);
+                setDefense(res.data.stats[1]);
+                setSpeed(res.data.stats[2]);
+                setHp(res.data.stats[5]);
+                for (const property in backgrounds) {
+                    if (backgrounds[property].name === res.data.types[0].type?.name) {
+                        setBackground(backgrounds[property].background);
+                        setColor(backgrounds[property].color);
+                    };
+                }
+            });
+        }
 
     }, [pokemonUrl]);
 
@@ -42,11 +44,11 @@ const PokemonCard = ({ pokemonUrl }) => {
     return (
         <li style={{ background: background }} className='pokemon-card' onClick={() => navigate(`/pokedex/${pokemonInfo.id}`)}>
             <div>
-                <div><img src={pokemonInfo.sprites?.other['official-artwork']?.front_default} alt="" /></div>
+                <div style={{ background: background }} ><img src={pokemonInfo.sprites?.other['official-artwork']?.front_default} alt="" /></div>
                 <div>
                     <div>
-                        <h4 style={{color: color}}>{name}</h4>
-                        <p>{typesPokemon}</p>
+                        <h4 style={{ color: color }}>{name}</h4>
+                        <p>{typesPokemon[0]?.type?.name} {typesPokemon[1] && `/ ${typesPokemon[1]?.type?.name}`}</p>
                     </div>
                     <div>
                         <ul>
