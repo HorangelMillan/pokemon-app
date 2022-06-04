@@ -44,14 +44,18 @@ const Pokedex = () => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${valueInput}`)
             .then(res => {
                 res.data.url = `https://pokeapi.co/api/v2/pokemon/${valueInput}`;
-                setPokemons([res.data])
+                setPokemons([res.data]);
+                setCurrentPage(1);
             });
     };
 
     const getPokemonByType = (e) => {
         if (e.target.value !== 'all') {
             axios.get(`https://pokeapi.co/api/v2/type/${e.target.value}`)
-                .then(res => setPokemons(res.data?.pokemon));
+                .then(res => {
+                    setPokemons(res.data?.pokemon);
+                    setCurrentPage(1);
+                });
         } else {
             getPokemons();
         };
@@ -91,7 +95,7 @@ const Pokedex = () => {
                 }
             </ul>
 
-            <Pagination currentPage={currentPage} pokemonsPerPage={pokemonsPerPage} totalPokemons={pokemons.length} paginate={paginate}/>
+            <Pagination currentPage={currentPage} pokemonsPerPage={pokemonsPerPage} totalPokemons={pokemons.length} paginate={paginate} />
         </div>
     );
 };
