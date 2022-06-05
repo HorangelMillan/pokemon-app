@@ -48,7 +48,7 @@ const PokemonCard = ({ pokemonUrl }) => {
                 <div>
                     <div>
                         <h4 style={{ color: color }}>{name}</h4>
-                        <p>{typesPokemon[0]?.type?.name} {typesPokemon[1] && `/ ${typesPokemon[1]?.type?.name}`}</p>
+                        <p> {typesPokemon[0]?.type?.name} {typesPokemon[1] && `/ ${typesPokemon[1]?.type?.name}`}</p>
                     </div>
                     <div>
                         <ul>

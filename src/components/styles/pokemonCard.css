@@ -17,8 +17,8 @@
 .pokemon-card img {
     position: relative;
     z-index: 2;
-    width: 60%;
     object-fit: cover;
+    width: 70%;
 }
 
 .pokemon-card h4, .pokemon-card p {
@@ -44,9 +44,9 @@
 }
 
 .pokemon-card > div > div:nth-child(2) {
-    padding: 1rem 0 0 0;
+    padding: 2rem 0 0 0;
     position: relative;
-    bottom: 2.6rem;
+    bottom: 3.7rem;
     height: 11rem;
     background-color: #FFFFFF;
     border-radius: 0 0 0.5rem 0.5rem;
@@ -55,6 +55,6 @@
 }
 
 .pepe {
-    background: linear-gradient(#a2f6e6, #dff8f4);
+    background: linear-gradient(#931065, #e97abe);
 }
 
