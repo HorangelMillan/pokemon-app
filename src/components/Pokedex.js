@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import Header from './Header';
 import PokemonCard from './PokemonCard';
-import imgPokedex from './images/pokedex.png';
-import './styles/pokedex.css';
 import Pagination from './Pagination';
+import './styles/pokedex.css';
 
 const Pokedex = () => {
 
@@ -64,10 +64,8 @@ const Pokedex = () => {
 
     return (
         <div className='pokedex'>
-            <header>
-                <div><img src={imgPokedex} alt="" /></div>
-                <div><div><div></div></div></div>
-            </header>
+            
+            <Header/>
 
             <p>Welcoleme <span><b>{userName}</b></span>, can find your favorite pokemons here</p>
 

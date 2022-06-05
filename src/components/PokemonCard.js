@@ -1,22 +1,22 @@
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import backgrounds from './backgrounds/backgorunds.json';
 import './styles/pokemonCard.css';
+import Backgrounds from '../hooks/Backgrounds';
 
 
 const PokemonCard = ({ pokemonUrl }) => {
 
     const [name, setName] = useState('');
     const [pokemonInfo, setPokemonInfo] = useState([]);
-    const [background, setBackground] = useState('');
     const [typesPokemon, setTypesPokemon] = useState('');
     const [attack, setAttack] = useState({});
     const [defense, setDefense] = useState({});
     const [speed, setSpeed] = useState({});
     const [hp, setHp] = useState({});
-    const [color, setColor] = useState('');
     const [imgIsLoad, setImgIsLoad] = useState(false);
+
+    const { background, color, backgroundSelect } = Backgrounds();
 
     useEffect(() => {
         if (pokemonUrl) {
@@ -29,16 +29,11 @@ const PokemonCard = ({ pokemonUrl }) => {
                 setDefense(res.data.stats[1]);
                 setSpeed(res.data.stats[2]);
                 setHp(res.data.stats[5]);
-                for (const property in backgrounds) {
-                    if (backgrounds[property].name === res.data.types[0].type?.name) {
-                        setBackground(backgrounds[property].background);
-                        setColor(backgrounds[property].color);
-                    };
-                }
+                backgroundSelect(res);
             });
         }
 
-    }, [pokemonUrl]);
+    }, [pokemonUrl, backgroundSelect]);
 
     const navigate = useNavigate();
 
