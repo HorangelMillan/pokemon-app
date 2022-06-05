@@ -16,6 +16,7 @@ const PokemonCard = ({ pokemonUrl }) => {
     const [speed, setSpeed] = useState({});
     const [hp, setHp] = useState({});
     const [color, setColor] = useState('');
+    const [imgIsLoad, setImgIsLoad] = useState(false);
 
     useEffect(() => {
         if (pokemonUrl) {
@@ -42,9 +43,9 @@ const PokemonCard = ({ pokemonUrl }) => {
     const navigate = useNavigate();
 
     return (
-        <li style={{ background: background }} className='pokemon-card' onClick={() => navigate(`/pokedex/${pokemonInfo.id}`)}>
+        <li style={{ background: background }} className={`pokemon-card ${!imgIsLoad && 'hiddenImg'}`} onClick={() => navigate(`/pokedex/${pokemonInfo.id}`)}>
             <div>
-                <div style={{ background: background }} ><img src={pokemonInfo.sprites?.other['official-artwork']?.front_default} alt="" /></div>
+                <div style={{ background: background }} ><img onLoad={() => setImgIsLoad(true)} src={pokemonInfo.sprites?.other['official-artwork']?.front_default} alt="" /></div>
                 <div>
                     <div>
                         <h4 style={{ color: color }}>{name}</h4>
