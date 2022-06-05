@@ -21,6 +21,15 @@
     font-family: 'Inter';
 }
 
+.pagination > li > div {
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.pagination > li > div:hover {
+    background-color: rgb(255, 255, 0);
+}
+
 .currentPageButton {
     background: rgba(255, 255, 0, 0.959);
     transform: scale(1.3);

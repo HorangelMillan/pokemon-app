@@ -23,7 +23,6 @@ const Pokedex = () => {
 
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
-        console.log(pageNumber);
     };
 
     /* pagination */
