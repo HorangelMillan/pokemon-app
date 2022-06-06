@@ -29,7 +29,10 @@ const Pokedex = () => {
 
     useEffect(() => {
         axios.get('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0')
-            .then(res => setPokemons(res.data?.results));
+            .then(res => {
+                setPokemons(res.data?.results);
+                console.log('pokedex.js se ejecutó el useEfect')
+            });
         axios.get('https://pokeapi.co/api/v2/type')
             .then(res => setTypes(res.data?.results));
     }, []);
@@ -64,8 +67,8 @@ const Pokedex = () => {
 
     return (
         <div className='pokedex'>
-            
-            <Header/>
+
+            <Header />
 
             <p>Welcoleme <span><b>{userName}</b></span>, can find your favorite pokemons here</p>
 

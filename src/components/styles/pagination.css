@@ -39,3 +39,17 @@
 .othersButtons {
     background: rgba(253, 46, 46, 0.959);
 }
+
+.pokemon > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pokemon > div:nth-child(2) > h2 {
+    border-top: 1px solid rgba(83, 83, 83, 0.267);
+    border-left: 1px solid rgba(83, 83, 83, 0.267);
+    border-right: 1px solid rgba(83, 83, 83, 0.267);
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    font-family: 'Inter';
+}

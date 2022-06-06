@@ -25,3 +25,41 @@
     width: 18rem;
     height: 18rem;
 }
+
+.pokemon > div:nth-child(2) h1 {
+    text-align: center;
+    font-family: 'Inter';
+}
+
+.pokemon > div:nth-child(2) > div {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.pokemon > div:nth-child(2) > div > div {
+    border-top: 1px solid rgba(102, 102, 102, 0.596);
+    width: 80%;
+    margin: auto;
+}
+
+.features {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.features p {
+    font-family: 'Roboto';
+}
+
+.features > div {
+    margin: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -10,7 +10,7 @@ const PokemonDetails = () => {
     const { id } = useParams();
 
     const [pokemon, setPokemon] = useState({});
-    const { background, backgroundSelect } = Backgrounds();
+    const { background, color, backgroundSelect } = Backgrounds();
 
     useEffect(() => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`).then(res => {
@@ -30,24 +30,34 @@ const PokemonDetails = () => {
                     <div style={{ background: background }}>
                         <img src={pokemon.sprites?.other['official-artwork']?.front_default} alt="" />
                     </div>
-                    <h2># {pokemon.id}</h2>
-                    <h1>{pokemon.name}</h1>
+                    <div>
+                        <h2># {pokemon.id}</h2>
+
+                        <div>
+                            <div></div>
+                            <h1 style={{ color: color }}>{pokemon.name && pokemon.name?.charAt(0).toUpperCase() + pokemon.name?.slice(1)}</h1>
+                            <div></div>
+                        </div>
+                    </div>
                 </div>
 
                 <div className='features'>
                     <div>
                         <p>height</p>
-                        <p>{pokemon.height}</p>
+                        <p><b>{pokemon.height}</b></p>
                     </div>
                     <div>
                         <p>weight</p>
-                        <p>{pokemon.weight}</p>
+                        <p><b>{pokemon.weight}</b></p>
                     </div>
                 </div>
 
                 <div className='type/skills'>
                     <div className='type'>
+                        <div></div>
+                        {
 
+                        }
                     </div>
                     <div className='skills'>
 

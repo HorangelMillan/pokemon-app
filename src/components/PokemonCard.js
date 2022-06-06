@@ -32,7 +32,6 @@ const PokemonCard = ({ pokemonUrl }) => {
                 backgroundSelect(res);
             });
         }
-
     }, [pokemonUrl, backgroundSelect]);
 
     const navigate = useNavigate();

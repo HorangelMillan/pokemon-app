@@ -5,11 +5,13 @@ const Pagination = ({ pokemonsPerPage, totalPokemons, paginate, currentPage }) =
     const pageNumbers = [];
 
     for (let i = 1; i <= Math.ceil(totalPokemons / pokemonsPerPage); i++) {
-        if (i > currentPage && i <= currentPage + 5) {
+
+        if (i <= currentPage && i >= currentPage - 5) {
             pageNumbers.push(i);
-        } else if (i <= currentPage && i >= currentPage - 5) {
+        } else if (i > currentPage && i <= currentPage + 5) {
             pageNumbers.push(i);
         };
+
     }
 
     return (
@@ -18,7 +20,7 @@ const Pagination = ({ pokemonsPerPage, totalPokemons, paginate, currentPage }) =
                 {
                     pageNumbers.map(number => (
                         <li key={number} className='pageItem'>
-                            <div className={`pageButton ${ currentPage === number ? 'currentPageButton' : 'othersButtons'}`} onClick={() => paginate(number)}>
+                            <div className={`pageButton ${currentPage === number ? 'currentPageButton' : 'othersButtons'}`} onClick={() => paginate(number)}>
                                 <h1>{number}</h1>
                             </div>
                         </li>
