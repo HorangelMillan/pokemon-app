@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import './styles/pokemonCard.css';
-import Backgrounds from '../hooks/Backgrounds';
+import Backgrounds from '../hooks/useBackgrounds';
 
 
 const PokemonCard = ({ pokemonUrl }) => {
@@ -30,11 +30,14 @@ const PokemonCard = ({ pokemonUrl }) => {
                 setSpeed(res.data.stats[2]);
                 setHp(res.data.stats[5]);
                 backgroundSelect(res);
+                console.log('me ejecuté');
             });
         }
     }, [pokemonUrl, backgroundSelect]);
 
     const navigate = useNavigate();
+
+    
 
     return (
         <li style={{ background: background }} className={`pokemon-card ${!imgIsLoad && 'hiddenImg'}`} onClick={() => navigate(`/pokedex/${pokemonInfo.id}`)}>

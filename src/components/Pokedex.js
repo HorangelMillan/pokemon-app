@@ -28,7 +28,7 @@ const Pokedex = () => {
     /* pagination */
 
     useEffect(() => {
-        axios.get('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0')
+        axios.get('https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0')
             .then(res => {
                 setPokemons(res.data?.results);
                 console.log('pokedex.js se ejecutó el useEfect')

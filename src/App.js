@@ -2,7 +2,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import Pokedex from "./components/Pokedex";
 import PokemonDetails from "./components/PokemonDetails";
 import PokedexInput from "./components/PokedexInput";
-import ProtectedRoutes from "./hooks/ProtectedRoutes";
+import ProtectedRoutes from "./components/ProtectedRoutes";
 import './App.css';
 
 function App() {

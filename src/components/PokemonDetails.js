@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Backgrounds from '../hooks/Backgrounds';
+import Backgrounds from '../hooks/useBackgrounds';
 import Header from './Header';
 import './styles/pokemonDetails.css'
 
